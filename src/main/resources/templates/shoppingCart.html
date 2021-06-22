@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+</head>
+<body>
+<h1>Shopping Cart</h1>
+<div>
+    <h1 th:if="${cart == null}">
+        Koszyk jest pusty
+    </h1>
+    <h1 th:if="${cart!=null}">
+    <dl th:each="cartLine: ${cart.getCartLines()}" th:text="|${cartLine.getProductInfo().name} ${cartLine.getProductInfo().price}zł, Ilość:  ${cartLine.getQuantity()}, (${cartLine.getAmount()})zł|">
+    </dl>
+    </h1>
+<h1>Do zapłaty</h1>
+<h2 th:text="|${toPay} zł|"></h2>
+</div>
+<h2>Złóż zamówienie</h2>
+<form action="#" method="get" th:action="@{/order/confirm}">
+    <button type="submit">Potwierdź</button>
+<a th:href="@{/product/productList}">Wróć do Sklepu</a>
+</body>
+</html>

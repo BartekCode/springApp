@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+<h1>Dostępne kategorie</h1>
+<tr th:each="category: ${categories}">
+<td th:text="${category.getName ()}"/>
+    <br>
+<td th:text="${category.getDescription ()}"/>
+    <br>
+    <p>_________________</p>
+</tr>
+<form th:action="@{/category/add}" method="post" th:object="${newCategory}">
+    <input th:field="*{name}" placeholder="Name"/><br/>
+    <input th:field="*{description}"placeholder="Description"/><br/>
+    <input type="submit" value="Add"/>
+</form>
+</body>
+</html>

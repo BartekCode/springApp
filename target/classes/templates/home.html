@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+</head>
+<body>
+<!--/*@thymesVar id="loggedUser" type="portfolio.portfolio.model.User"*/-->
+<div th:if="${loggedUser !=null}" >
+    <span th:text="|Zalogowany jako: ${loggedUser.firstName}|"></span>
+</div>
+<h1>Portfolio</h1>
+<div sec:authorize="isAuthenticated()">
+    UserName <span sec:authentication="name"></span></div>
+<a th:href="@{/registration}">Register</a>
+<a th:href="@{/logout}">Wyloguj</a>
+<a th:href="@{/login}">Zaloguj</a>
+<div>
+    <h1>Go to Shop!</h1>
+    <a th:href="@{/product/productList}">Sklep</a>
+</div>
+</body>
+</html>

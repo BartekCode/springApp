@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Czas weryfikacji upłynął</h1>
+<h1>Wyślij email weryfikacyjny ponownie</h1>
+<h3>Podaj Email</h3>
+<form th:action="@{/registration/newToken}" method="post" >
+    <input type="email" th:name="email" placeholder="Email"/><br/>
+    <input type="submit" value="Wyślij nowy token"/>
+</form>
+</body>
+</html>

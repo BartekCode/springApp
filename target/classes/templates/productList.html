@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+<h1>Product List</h1>
+<span th:each="product: ${products}">
+    <td>
+<!-- zrobić by wyświetlały sie produkty z wybranej kategorii-->
+    <span th:text="|Kategoria: ${product.name}|"/>
+    <p th:text="|Opis: ${product.description}|"/>
+    <tr th:each="productt: ${product.products}">
+        <p>Produkty:</p>
+        <p th:text="|Nazwa: ${productt.getName}|"/>
+        <P> Opis :</P>
+        <p th:text="${productt.getDescription}"/>
+        <p th:text="|Cena: ${productt.getPrice} zł|"></p>
+        <form action="#" method="get" th:action="@{/product/buyProduct/{productId}(productId= ${productt.getId})}">
+            <button type="submit">Dodaj do koszyka</button>
+        </form>
+    </tr>
+    </td>
+</body>
+</html>

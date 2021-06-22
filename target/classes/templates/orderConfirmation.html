@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Dokończ Zamówienie</h1>
+<!--/*@thymesVar id="loggedUser" type="portfolio.portfolio.model.User"*/-->
+<h2>Twoje Dane</h2>
+<p th:text="|Imię :${loggedUser.firstName}|"></p>
+<p th:text="|Nazwisko: ${loggedUser.lastName}|"></p>
+<p th:text="|Adres email : ${loggedUser.email}|"></p>
+
+<!--/*@thymesVar id="toPay" type="portfolio.portfolio.logic.Utils.Utils"*/-->
+<h2 th:text="|Wartość zamówienia ${toPay}zł|"></h2>
+<h2>Zapłać</h2>
+</body>
+</html>
