@@ -1,0 +1,51 @@
+-------------------------------------------------------------------------------
+Test set: portfolio.portfolio.controller.ProductsControllerE2ETest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.522 s <<< FAILURE! - in portfolio.portfolio.controller.ProductsControllerE2ETest
+saveProductWithoutNameThrowsException  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__init_users-roles_table.sql failed
+-----------------------------------------------
+SQL State  : 42S22
+Error Code : 42122
+Message    : Column "ROLE_USER" not found; SQL statement:
+insert into roles (role, description) VALUES ("ROLE_USER", "default role for user") [42122-200]
+Location   : db/migration/V3__init_users-roles_table.sql (C:\Users\Bartekk\Desktop\portfolio\target\classes\db\migration\V3__init_users-roles_table.sql)
+Line       : 10
+Statement  : insert into roles (role, description) VALUES ("ROLE_USER", "default role for user")
+
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+
+Migration V3__init_users-roles_table.sql failed
+-----------------------------------------------
+SQL State  : 42S22
+Error Code : 42122
+Message    : Column "ROLE_USER" not found; SQL statement:
+insert into roles (role, description) VALUES ("ROLE_USER", "default role for user") [42122-200]
+Location   : db/migration/V3__init_users-roles_table.sql (C:\Users\Bartekk\Desktop\portfolio\target\classes\db\migration\V3__init_users-roles_table.sql)
+Line       : 10
+Statement  : insert into roles (role, description) VALUES ("ROLE_USER", "default role for user")
+
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: 
+
+Migration V3__init_users-roles_table.sql failed
+-----------------------------------------------
+SQL State  : 42S22
+Error Code : 42122
+Message    : Column "ROLE_USER" not found; SQL statement:
+insert into roles (role, description) VALUES ("ROLE_USER", "default role for user") [42122-200]
+Location   : db/migration/V3__init_users-roles_table.sql (C:\Users\Bartekk\Desktop\portfolio\target\classes\db\migration\V3__init_users-roles_table.sql)
+Line       : 10
+Statement  : insert into roles (role, description) VALUES ("ROLE_USER", "default role for user")
+
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Column "ROLE_USER" not found; SQL statement:
+insert into roles (role, description) VALUES ("ROLE_USER", "default role for user") [42122-200]
+
+httpGet_returnsAllProducts  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Caused by: org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+
